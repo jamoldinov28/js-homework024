@@ -7,7 +7,7 @@ const backTopEl = document.querySelector(".back-top")
 
 const BASE_URL = "https://dummyjson.com"
 
-const perPageCount = 6
+const perPageCount = 5
 let total = 0
 
 async function fetchData(endpoint){
@@ -54,15 +54,13 @@ function createCard(data){
            <div class="hero__card">
                 <h2>${posts.title}</h2>
                 <p>${posts.body}</p>
-                <h2> ${posts.tags} </h2> 
             <div class="hero__topic">
                 <div class="hero__text">
-                    <p>likes: ${posts.reactions.likes}</p>
-                    <p>dislikes: ${posts.reactions.dislikes}</p>
+                    <p> <i class="fa-solid fa-thumbs-up"></i> ${posts.reactions.likes}</p>
+                    <p> <i class="fa-solid fa-thumbs-down"></i> ${posts.reactions.dislikes}</p>
                 </div>
+                <p> <i class="fa-solid fa-eye"></i> ${posts.views}</p>
                 <div class="hero__text">
-                    <p>views: ${posts.views}</p>
-                    <p>userId: ${posts.userId}</p>
                 </div>
             </div>
             </div>
@@ -96,14 +94,3 @@ window.addEventListener("scroll", ()=>{
         backTopEl.style.transform = "scale(0)"
     }
 })
-
-
-
-
-
-
-
-
-
-
-
